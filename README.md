@@ -115,4 +115,59 @@ Only logged-in admins can perform CRUD operations on books.
 CSRF tokens are used for secure authentication.
 
 
+### 4 Book Enter Page
+![Book Enter Page](Screenshots/book_entry.png)
+* Book Entry Page (Screenshot Explanation)
+
+The book entry page allows the admin to add new books to the library database.
+
+The admin must provide the book name, author name, publication year, and country.
+
+All fields are required; if any field is left empty, an error message is displayed.
+
+After submitting the form, the book details are stored in the database.
+
+Upon successful entry, the admin is redirected to the book update page.
+
+Only logged-in admins can access this page.
+
+CSRF tokens are used for secure form submission.
+
+
+### 5 Book Action Page
+![Book Action Page](Screenshots/update_book.png)
+* Book Action Page (Screenshot Explanation)
+
+The book action page displays a list of all books stored in the database.
+
+Each book entry includes details such as book name, author, publication year, and country.
+
+Admin users can update or delete any book directly from this page.
+
+Clicking the Update button redirects the admin to the Book Update Page, where modifications can be made.
+
+Clicking the Delete button removes the book entry from the database after confirmation.
+
+This page is only accessible to logged-in admins.
+
+CSRF tokens are used to ensure secure actions.
+
+
+### 6 Update Book Data Page
+![Update Book Data Page](Screenshots/update_book_data.png)
+*Update Book Data Page (Screenshot Explanation)
+
+The book update page allows the admin to modify existing book details in the library database.
+
+The admin can edit the book name, author name, publication year, and country.
+
+When the admin submits the updated details, the changes are saved in the database.
+
+If any field is left empty, an error message is displayed.
+
+Only logged-in admins can access this page and make modifications.
+
+Upon successful update, the admin is redirected to the Show Books page.
+
+CSRF tokens are used to ensure secure form submission.
 
