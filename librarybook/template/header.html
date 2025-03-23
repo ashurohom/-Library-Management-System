@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Library Management System</div>
+        <button class="menu-toggle">&#9776;</button>
+        <ul class="nav-links">
+            <li><a href="/showbook">Books</a></li>
+
+
+            {% if request.user.is_authenticated %}
+            <li><a href="/bookentry">BookEntry</a></li>
+            <li><a href="/updatebook">Update Book</a></li>
+            <li><a href="/logout">Logout</a>{{ request.user.email }}</li>
+            {% else %}
+            <li><a href="/signup">Admin Signup</a></li>
+            <li><a href="/login">Admin Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <script>
+        document.querySelector(".menu-toggle").addEventListener("click", function () {
+            document.querySelector(".nav-links").classList.toggle("active");
+        });
+    </script>
+
+</body>
+</html>

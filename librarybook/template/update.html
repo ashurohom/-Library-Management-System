@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/bookentry.css' %}">
+{% endblock css %}
+
+{% block main %}
+<div class="form-container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h1>Update Book</h1><br>
+        
+        <label for="book_name">Book Name:</label>
+        <input type="text" id="book_name" name="book_name" value="{{ book.book_name }}" required>
+
+        <label for="book_author">Author:</label>
+        <input type="text" id="book_author" name="book_author" value="{{ book.book_author }}" required>
+
+        <label for="publication_year">Publication Year:</label>
+        <input type="number" id="publication_year" name="publication_year" value="{{ book.publication_year }}" required>
+
+        <label for="country">Country:</label>
+        <input type="text" id="country" name="country" value="{{ book.country }}" required>
+
+        <button type="submit">Update</button>
+    </form>
+</div>
+{% endblock main %}
