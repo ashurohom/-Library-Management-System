@@ -171,3 +171,58 @@ Upon successful update, the admin is redirected to the Show Books page.
 
 CSRF tokens are used to ensure secure form submission.
 
+
+### 7 Delete Book Data Page
+![Delete Book Data Page](Screenshots/delete_book.png)
+*Delete Book Data Page (Screenshot Explanation)
+
+
+The Delete functionality allows the admin to remove a book from the system permanently.
+
+On the Book Action Page, each book entry has a Delete button.
+
+When the admin clicks the Delete button, the book is immediately removed from the database.
+
+This action ensures that outdated or incorrect book records can be managed efficiently.
+
+Only logged-in admins have the authority to delete books.
+
+CSRF tokens are implemented to prevent unauthorized deletions.
+
+
+### 8 Logout Admin 
+![Logout Admin](Screenshots/logout.png)
+*Logout Admin (Screenshot Explanation)
+
+The Logout button allows the admin to securely log out from the system.
+
+Once logged out, the admin cannot perform any CRUD operations on books.
+
+After clicking Logout, the user is redirected to the Home Page, where they can only view book details.
+
+Implemented Django's built-in authentication logout method to ensure secure session termination.
+
+CSRF protection is used to prevent unauthorized logout requests.
+
+
+
+### 9 SQl Workbench 
+![SQL Workbench](Screenshots/SQL.png)
+*SQL Workbench (Screenshot Explanation)
+
+
+SQL Workbench was used to manage the database for the Library Management System.
+
+A book table was created to store book records, including book name, author, publication year, and country.
+
+The default auth_user table was used for admin authentication, eliminating the need to create a separate admin table.
+
+The book table contains all CRUD operations (Create, Read, Update, Delete) for managing book records.
+
+SQL Workbench provides an interface to view, insert, update, and delete records directly from the database.
+
+The database structure ensures efficient storage and retrieval of book information.
+
+The Django ORM (Object-Relational Mapping) was used to interact with the database, simplifying database operations.
+
+Screenshots of SQL Workbench show the book table structure and stored data.
