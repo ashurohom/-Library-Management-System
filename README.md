@@ -63,7 +63,7 @@ The **Library Management System** is a web-based application built using **Djang
 This system is designed to **simplify library book management** by enabling admins to efficiently manage books through a web-based interface. The project uses **Django's authentication system** to ensure only authorized users can make changes. All forms include **CSRF tokens** for protection against cross-site request forgery attacks. Additionally, **Django Rest Framework (DRF)** allows for **API-based interactions** for potential integration with other systems.
 
 ### 1 Admin Signup Page
-![Signup Page](Screenshots/Homepage.png)
+![Home Page](Screenshots/Homepage.png)
 * Home Page (Screenshot Explanation)
 Home Page Overview:
 
@@ -79,5 +79,40 @@ The home page is accessible at the default link: 127.0.0.1:8000/.
 ### 2 Admin Signup Page
 ![Signup Page](Screenshots/admin_signup.png)
 * Signup Page (Screenshot Explanation)
+
+  The admin signup page allows new administrators to create an account.
+
+It requires the admin to enter an email, password, and re-enter the password for confirmation.
+
+If any field is empty, an error message is displayed.
+
+If the passwords do not match, an error message is shown.
+
+If the email is already registered, a message alerts the user.
+
+After successful signup, the admin is redirected to the login page.
+
+CSRF tokens are used for security to prevent cross-site request forgery.
+
+
+
+### 3 Admin Login Page
+![Login Page](Screenshots/admin_login.png)
+* Login Page (Screenshot Explanation)
+
+  The admin login page allows registered administrators to access the system.
+
+The admin needs to enter a registered email and password to log in.
+
+If any field is left empty, an error message is displayed.
+
+If incorrect credentials are provided, an error message alerts the user.
+
+Upon successful login, the admin is redirected to the home page.
+
+Only logged-in admins can perform CRUD operations on books.
+
+CSRF tokens are used for secure authentication.
+
 
 
