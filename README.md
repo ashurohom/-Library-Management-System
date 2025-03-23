@@ -67,27 +67,15 @@ This system is designed to **simplify library book management** by enabling admi
 *📌 Home Page (Screenshot Explanation)
 Home Page Overview:
 
-The homepage displays the navigation bar and book data.
+The home page displays the navigation bar and book data.
 
 Before the admin logs in, students can only view the book details.
 
-After logging in as an admin, the user can perform CRUD (Create, Read, Update, Delete) operations on the book records.
+After the admin logs in, they can perform CRUD operations on the book details.
 
-Accessing the Home Page:
+The home page is accessible at the default link: 127.0.0.1:8000/.
 
-Default URL: 127.0.0.1:8000/
-
-Features on the Home Page:
-
- Navbar: Provides easy navigation to different pages (Home, Login, Signup, Book Management).
-
- Book Data Display: Students can see available books with details like name, author, and publication year.
-
- Restricted Access:
-
-Before login: Only book details are visible.
-
-After admin login: CRUD operations become available.*
+Below is a screenshot of the home page:
 
 
 
