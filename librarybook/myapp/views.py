@@ -1,15 +1,12 @@
-
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Book
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 
-def Home(request):
-    return render(request,'base.html')
 
-
+# Implemented Signup functionality
 def Signup(request):
     if request.method == "POST":
         admin_email = request.POST.get('admin_email', '').strip()
@@ -28,6 +25,7 @@ def Signup(request):
             messages.error(request, "Admin Email is already registered.")
             return render(request, 'signup.html')
 
+        # Creating a new admin user
         user = User.objects.create_user(username=admin_email, email=admin_email, password=password)
         user.is_staff = True  
         user.save()
@@ -37,10 +35,8 @@ def Signup(request):
 
     return render(request, 'signup.html')
 
-#
 
-
-
+# User authentication for login
 def Login(request):
     if request.method == "POST":
         ue = request.POST.get('admin_email', '').strip()
@@ -54,7 +50,7 @@ def Login(request):
 
         if user is not None:
             login(request, user)
-            return redirect('/') 
+            return redirect('/')  # Redirect to home page
         else:
             messages.error(request, "Invalid Email or Password")
             return render(request, 'login.html')
@@ -62,13 +58,14 @@ def Login(request):
     return render(request, 'login.html')
 
 
-
+# Logout functionality
 def ulogout(request):
     logout(request)
     messages.success(request, "User logged out")
     return redirect('/')
 
 
+# Book entry view
 def Bookentry(request):
     if request.method == 'POST':
         b_name = request.POST['book_name']
@@ -76,6 +73,7 @@ def Bookentry(request):
         p_year = request.POST['publication_year']
         b_country = request.POST['country']
 
+        # Saving book details
         book = Book.objects.create(
             book_name=b_name,
             book_author=b_author,
@@ -89,26 +87,32 @@ def Bookentry(request):
         return render(request,'bookentry.html')
 
 
+# Display all books
 def Showbook(request):
-    context={}
-    all_books=Book.objects.all()
-    context['books']=all_books
-    return render(request,'base.html',context)
+    context = {}
+    all_books = Book.objects.all()
+    context['books'] = all_books
+    return render(request, 'base.html', context)
 
+
+# Display books for updating
 def Updatebook(request):
-    context={}
-    all_books=Book.objects.all()
-    context['books']=all_books
-    return render(request,'updatebook.html',context)
+    context = {}
+    all_books = Book.objects.all()
+    context['books'] = all_books
+    return render(request, 'updatebook.html', context)
 
-def Delete(request,bid):
-    book=Book.objects.filter(id=bid)
+
+# Delete a book by ID
+def Delete(request, bid):
+    book = Book.objects.filter(id=bid)
     book.delete()
     return redirect('/updatebook')
 
 
+# Update book details
 def Update(request, bid):
-    book = Book.objects.filter(id=bid).first()  
+    book = Book.objects.filter(id=bid).first()  # Fetch book details
 
     if not book:
         return redirect('/showbook')  
