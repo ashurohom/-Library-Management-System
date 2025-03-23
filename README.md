@@ -64,7 +64,30 @@ This system is designed to **simplify library book management** by enabling admi
 
 ### 1️⃣ Admin Signup Page
 ![Signup Page](Screenshots/Homepage.png)
-*This page allows an admin to register by providing an email and password. Password validation ensures security.*
+*📌 Home Page (Screenshot Explanation)
+Home Page Overview:
+
+The homepage displays the navigation bar and book data.
+
+Before the admin logs in, students can only view the book details.
+
+After logging in as an admin, the user can perform CRUD (Create, Read, Update, Delete) operations on the book records.
+
+Accessing the Home Page:
+
+Default URL: 127.0.0.1:8000/
+
+Features on the Home Page:
+
+ Navbar: Provides easy navigation to different pages (Home, Login, Signup, Book Management).
+
+ Book Data Display: Students can see available books with details like name, author, and publication year.
+
+ Restricted Access:
+
+Before login: Only book details are visible.
+
+After admin login: CRUD operations become available.*
 
 
 
