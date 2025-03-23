@@ -62,7 +62,9 @@ The **Library Management System** is a web-based application built using **Djang
 ## Project Explanation 
 This system is designed to **simplify library book management** by enabling admins to efficiently manage books through a web-based interface. The project uses **Django's authentication system** to ensure only authorized users can make changes. All forms include **CSRF tokens** for protection against cross-site request forgery attacks. Additionally, **Django Rest Framework (DRF)** allows for **API-based interactions** for potential integration with other systems.
 
-
+### 1️⃣ Admin Signup Page
+![Signup Page](Screenshots/Homepage.png)
+*This page allows an admin to register by providing an email and password. Password validation ensures security.*
 
 
 
